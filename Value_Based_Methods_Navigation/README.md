@@ -37,7 +37,7 @@ conda install pytorch==1.12.1 torchvision==0.13.1 torchaudio==0.12.1 cudatoolkit
 cd python
 pip install .
 ```
-* Download the Windows based Unity Environment and extract the root of repo
+* Download the Windows based Unity Environment and extract into the root of repo
 [Windows (64 bit)](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P1/Banana/Banana_Windows_x86_64.zip)
 
 * Install Jupyter kernel for environment

@@ -17,7 +17,7 @@ A reward of `+1` is provided for collecting a yellow banana, and a reward of `-1
 # Getting Started
 This tutorial details the installation and configuration of the project using local GPU training with NVIDIA GPUs and the NVIDIA CUDA toolkit on a Windows 11 PC
 
-![Local GPU Training](https://github.com/mindcriminal/Udacity_RL_Nanodegree_Projects/tree/main/Value_Based_Methods_Navigation/GPU_Screenshot.png)
+![Local GPU Training](https://github.com/mindcriminal/Udacity_RL_Nanodegree_Projects/blob/main/Value_Based_Methods_Navigation/GPU_Screenshot.png)
 
 * Install the Anaconda Python distribution which can be found [here](https://www.anaconda.com/)
 

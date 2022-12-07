@@ -52,7 +52,9 @@ python -m ipykernel install --user --name rl37_anaconda
 ```bash
 jupyter-lab
 ```
-* Launch Visdom From Your Anaconda Prompt and once the server is up point your web browser http://localhost:8097
+* Launch Visdom From Your Anaconda Prompt and once the server is up point your web browser to http://localhost:8097. As the training progresses you will see the plots updating.
 ```bash
 python -m visdom.server
 ```
+
+![Visdom Screenshot](https://github.com/mindcriminal/Udacity_RL_Nanodegree_Projects/blob/main/Policy_Based_Methods_Continuous_Control/visdom_solved.png)

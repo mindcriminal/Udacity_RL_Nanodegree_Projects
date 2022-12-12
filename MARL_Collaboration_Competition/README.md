@@ -25,8 +25,6 @@ The task is episodic, and in order to solve the environment, your agents must ge
 The environment is considered solved, when the average (over 100 episodes) of those **scores** is at least +0.5.
 
 # Getting Started
-
-# Getting Started
 This tutorial details the installation and configuration of the project using local GPU training with NVIDIA GPUs and the NVIDIA CUDA toolkit on a Windows 11 PC
 
 * Install the Anaconda Python distribution which can be found [here](https://www.anaconda.com/)

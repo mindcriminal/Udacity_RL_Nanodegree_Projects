@@ -4,9 +4,9 @@
 [image2]: https://user-images.githubusercontent.com/10624937/42135622-e55fb586-7d12-11e8-8a54-3c31da15a90a.gif "Soccer"
 
 
-# Project 3: Collaboration and Competition
+# Collaboration and Competition Project
 
-### Introduction
+# Introduction
 
 For this project, you will work with the [Tennis](https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Learning-Environment-Examples.md#tennis) environment.
 
@@ -15,6 +15,7 @@ For this project, you will work with the [Tennis](https://github.com/Unity-Techn
 In this environment, two agents control rackets to bounce a ball over a net. If an agent hits the ball over the net, it receives a reward of +0.1.  If an agent lets a ball hit the ground or hits the ball out of bounds, it receives a reward of -0.01.  Thus, the goal of each agent is to keep the ball in play.
 
 The observation space consists of 8 variables corresponding to the position and velocity of the ball and racket. Each agent receives its own, local observation.  Two continuous actions are available, corresponding to movement toward (or away from) the net, and jumping. 
+# Solving The Environment
 
 The task is episodic, and in order to solve the environment, your agents must get an average score of +0.5 (over 100 consecutive episodes, after taking the maximum over both agents). Specifically,
 
@@ -23,40 +24,41 @@ The task is episodic, and in order to solve the environment, your agents must ge
 
 The environment is considered solved, when the average (over 100 episodes) of those **scores** is at least +0.5.
 
-### Getting Started
+# Getting Started
 
-1. Download the environment from one of the links below.  You need only select the environment that matches your operating system:
-    - Linux: [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P3/Tennis/Tennis_Linux.zip)
-    - Mac OSX: [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P3/Tennis/Tennis.app.zip)
-    - Windows (32-bit): [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P3/Tennis/Tennis_Windows_x86.zip)
-    - Windows (64-bit): [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P3/Tennis/Tennis_Windows_x86_64.zip)
-    
-    (_For Windows users_) Check out [this link](https://support.microsoft.com/en-us/help/827218/how-to-determine-whether-a-computer-is-running-a-32-bit-version-or-64) if you need help with determining if your computer is running a 32-bit version or 64-bit version of the Windows operating system.
+# Getting Started
+This tutorial details the installation and configuration of the project using local GPU training with NVIDIA GPUs and the NVIDIA CUDA toolkit on a Windows 11 PC
 
-    (_For AWS_) If you'd like to train the agent on AWS (and have not [enabled a virtual screen](https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Training-on-Amazon-Web-Service.md)), then please use [this link](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P3/Tennis/Tennis_Linux_NoVis.zip) to obtain the "headless" version of the environment.  You will **not** be able to watch the agent without enabling a virtual screen, but you will be able to train the agent.  (_To watch the agent, you should follow the instructions to [enable a virtual screen](https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Training-on-Amazon-Web-Service.md), and then download the environment for the **Linux** operating system above._)
+* Install the Anaconda Python distribution which can be found [here](https://www.anaconda.com/)
 
-2. Place the file in the DRLND GitHub repository, in the `p3_collab-compet/` folder, and unzip (or decompress) the file. 
+* Launch Anaconda Prompt (anaconda3) by searching for it in the Start Menu
 
-### Instructions
+* Create a new environment setting the Python version to 3.7.  This enables compatibility with dependancies that will be installed later as well as recent versions of CUDA (e.g., v11.6) which enables offline training with a local and current NVIDIA GPU (e.g., RTX 3060)
+```bash
+conda create -n rl37_anaconda python=3.7
+conda activate rl37_anaconda 
+```
+* Install Visdom (for training monitoring), Torch, and CUDA
+```bash
+conda install visdom pytorch==1.12.1 torchvision==0.13.1 torchaudio==0.12.1 cudatoolkit=11.6 -c pytorch -c conda-forge
+```
+* Install the dependencies under the python folder (copied from Udacity's 'Value-based-methods-main' Github repo with some modification to requirements.txt)
+```bash
+cd python
+pip install .
+```
+* Download the Windows based Unity Environment and extract into the root of the repo
+[Windows (64 bit)](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P3/Tennis/Tennis_Windows_x86_64.zip)
 
-Follow the instructions in `Tennis.ipynb` to get started with training your own agent!  
-
-### (Optional) Challenge: Soccer Environment
-
-After you have successfully completed the project, you might like to solve the more difficult **Soccer** environment.
-
-![Soccer][image2]
-
-In this environment, the goal is to train a team of agents to play soccer.  
-
-You can read more about this environment in the ML-Agents GitHub [here](https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Learning-Environment-Examples.md#soccer-twos).  To solve this harder task, you'll need to download a new Unity environment.  (**Note**: Udacity students should not submit a project with this new environment.)
-
-You need only select the environment that matches your operating system:
-- Linux: [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P3/Soccer/Soccer_Linux.zip)
-- Mac OSX: [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P3/Soccer/Soccer.app.zip)
-- Windows (32-bit): [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P3/Soccer/Soccer_Windows_x86.zip)
-- Windows (64-bit): [click here](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P3/Soccer/Soccer_Windows_x86_64.zip)
-
-Then, place the file in the `p3_collab-compet/` folder in the DRLND GitHub repository, and unzip (or decompress) the file.  Next, open `Soccer.ipynb` and follow the instructions to learn how to use the Python API to control the agent.
-
-(_For AWS_) If you'd like to train the agents on AWS (and have not [enabled a virtual screen](https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Training-on-Amazon-Web-Service.md)), then please use [this link](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P3/Soccer/Soccer_Linux_NoVis.zip) to obtain the "headless" version of the environment.  You will **not** be able to watch the agents without enabling a virtual screen, but you will be able to train the agents.  (_To watch the agents, you should follow the instructions to [enable a virtual screen](https://github.com/Unity-Technologies/ml-agents/blob/master/docs/Training-on-Amazon-Web-Service.md), and then download the environment for the **Linux** operating system above._)
+* Install Jupyter kernel for environment
+```bash
+python -m ipykernel install --user --name rl37_anaconda
+```
+* Launch Jupyterlab, change the kernel (Kernel --> Change Kernel -> rl37_anaconda) and run the entire notebook. The agent will be trained and once the environment is solved the model will be saved as a checkpoint file. Be sure the path to the Unity Environment is correct.
+```bash
+jupyter-lab
+```
+* Launch Visdom From Your Anaconda Prompt and once the server is up point your web browser to http://localhost:8097. As the training progresses you will see the plots updating.
+```bash
+python -m visdom.server
+```
